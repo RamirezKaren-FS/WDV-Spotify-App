@@ -1,0 +1,19 @@
+{
+  "name": "wdv339-spotifyapp",
+  "version": "1.0.0",
+  "description": "WDV339 Spotify School Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "student",
+    "spotify",
+    "search",
+    "jws",
+    "api",
+    "database"
+  ],
+  "author": "Karen J Ramirez",
+  "license": "ISC"
+}

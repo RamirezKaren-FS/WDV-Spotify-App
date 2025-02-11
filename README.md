@@ -1,6 +1,6 @@
 # PROJECT-AND-PORTFOLIO-III
 
-Project by Karen J Ramirez 
+Spotify App Project by Karen J Ramirez 
 
 ## Project Overview -
 This project is for Project and Portfolio III 202502-section 1. This project will use Spotify's API to fetch information such as song, artist, and albums. The information will be fetched using a token that will be given once the user signs in to their account and agrees to the requests. Upon success the information searched for will be displayed accordingly.   
