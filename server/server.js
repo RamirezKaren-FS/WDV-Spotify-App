@@ -8,12 +8,20 @@ const app = express()
 
 const PORT = process.env.PORT || 3000
 
+
+const spotifyRouter = require('./routes/spotify')
+const userRouter = require('./routes/user')
+
 const DATABASE_URL = process.env.DATABASE_URL
 
 mongoose.connect(DATABASE_URL, )
 const db = mongoose.connection
 db.on('error', error => console.error(error))
 db.once('open', () => console.log('Database Connection Established'))
+
+app.use(express.json())
+app.use('/spotify/user', userRouter)
+app.use('/spotify', spotifyRouter)
 
 app.listen(PORT, () => {
     console.log(`Server running on ${PORT}`);
