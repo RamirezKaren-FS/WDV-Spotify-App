@@ -6,8 +6,9 @@ const cors = require('cors')
 
 const app = express()
 
-app.use(cors())
-const PORT = process.env.PORT || 3000
+app.use(cors()) 
+
+const PORT = process.env.PORT || 8000
 
 
 const spotifyRouter = require('./routes/spotify')
@@ -21,7 +22,7 @@ db.on('error', error => console.error(error))
 db.once('open', () => console.log('Database Connection Established'))
 
 app.use(express.json())
-app.use('/spotify/user', userRouter)
+app.use('/user', userRouter)
 app.use('/spotify', spotifyRouter)
 
 app.listen(PORT, () => {

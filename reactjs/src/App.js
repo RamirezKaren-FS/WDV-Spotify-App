@@ -9,34 +9,33 @@ function App() {
 
 
   const API_BASE = process.env.NODE_ENV === 'development' 
-  ? 'http://localhost/3000' 
+  ? 'http://localhost:3000/' 
   : process.env.REACT_APP_BASE_URL;
 
   let ignore = false
   useEffect(()=>{
+    
     if(!ignore){
       getAllUsers()
     }
     return ()=> {
       ignore = true
     }
-  })
+  }, [])
 
-  const getAllUsers = async (req,res) =>{
+  const getAllUsers = async () =>{
     setLoading(true)
     try {
-      await fetch(`${API_BASE}/spotify/user`)
+      await fetch(`${API_BASE}user`)
             .then(res => res.json())
-            .then(data => {
-              console.log({data});
-              setUser(data)})
+            .then(data => {setUser(data)})
     } catch (error) {
       setError(error.message || "Encountered an unexpected error")
-      
     }finally{
       setLoading(false)
     }
   }
+  
   return (
     <div className="App">
       <header className="App-header">
